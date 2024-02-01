@@ -1,0 +1,19 @@
+APPROACH:
+It iterates through the array, maintaining two variables: cnt (count) and no (current potential majority element).
+If cnt becomes 0, it updates no to the current element, indicating a potential majority element.
+For each element, it checks if it matches the potential majority element (no). If it does, it increments cnt, otherwise, it decrements cnt.
+The final value of no would be the majority element.
+
+int count=0,num;
+        for(int i=0;i<nums.size();i++){
+            if(count==0){
+                num=nums[i];
+            }
+            if(nums[i]==num){
+                count++;
+            }
+            else{
+                count--;
+            }
+        }
+        return num;
