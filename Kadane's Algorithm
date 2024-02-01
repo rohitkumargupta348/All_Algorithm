@@ -1,0 +1,25 @@
+Approach
+The algorithm efficiently computes the maximum subarray sum using a single pass through the array. The 'currSum' variable keeps track of the sum of the current subarray,
+and 'maxSum' is updated whenever a new maximum subarray sum is found.
+If all elements in the array are negative, the algorithm returns the maximum element in the array (temp) to handle cases where the maximum subarray sum is non-positive.
+
+int maxSubArray(vector<int>& nums) {
+        if(nums.size()==1){
+            return nums[0];
+        }
+        int currentsum =0, maxsum =-1;
+        for(int i=0;i<nums.size();i++){
+            currentsum += nums[i];
+            if(currentsum<0){
+                currentsum = 0;
+            }
+            if(currentsum>maxsum){
+                maxsum=currentsum;
+            }
+        }
+        int maxele = *max_element(nums.begin(),nums.end());
+        if(maxele<0){
+            return maxele;
+        }
+        return maxsum;
+    }
