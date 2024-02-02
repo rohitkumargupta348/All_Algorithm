@@ -1,3 +1,4 @@
+Find maximum subarray sum
 Approach
 The algorithm efficiently computes the maximum subarray sum using a single pass through the array. The 'currSum' variable keeps track of the sum of the current subarray,
 and 'maxSum' is updated whenever a new maximum subarray sum is found.
