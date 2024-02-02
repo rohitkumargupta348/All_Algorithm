@@ -1,3 +1,4 @@
+Majority Element(>n/2)
 APPROACH:
 It iterates through the array, maintaining two variables: cnt (count) and no (current potential majority element).
 If cnt becomes 0, it updates no to the current element, indicating a potential majority element.
