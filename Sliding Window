@@ -1,0 +1,12 @@
+To know, Where we use the Sliding Window then we remember the following terms which is mentioned below:
+
+Array, String, Sub Array, Sub String, Largest Sum, Maximum Sum, Minimum Sum
+
+Algorithm:
+
+Determine Window Size: Decide on a fixed window size that defines the number of elements to consider at each step.
+Initialize and Process: Start with the initial elements within the window. Perform any initial calculations or operations.
+Slide the Window: Iterate through the data, updating the window by adding the next element and removing the leftmost one.
+Update and Evaluate: Adjust calculations or data structures based on the new element. Evaluate if the current window meets the problem’s conditions.
+Continue Sliding: Repeat the sliding, updating, and evaluation steps until the end of the data is reached.
+Return Result: Return the final result or outcome based on the processed windows.
