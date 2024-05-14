@@ -1,0 +1,61 @@
+1.Adjacency Matrix
+
+An adjacency matrix of a graph is a two-dimensional array of size n x n, where n is the number of nodes in the graph, 
+with the property that a[ i ][ j ] = 1 if the edge (vᵢ, vⱼ) is in the set of edges, and a[ i ][ j ] = 0 if there is no such edge.
+
+using namespace std;
+
+int main()
+{
+    int n, m;
+    cin >> n >> m;
+    // time complexity: O(n*n)
+    int adj[n+1][n+1];
+    for(int i = 0; i < m; i++)
+    {
+        int u, v;
+        cin >> u >> v;
+//For Undirected Graph
+        adj[u][v] = 1;
+        adj[v][u] = 1;  // this statement will be removed in case of directed graph
+//For Directed Graph
+        adj[u][v] = 1;
+//For Weighted Undirected Graph
+        adj[u][v] = w;
+        adj[v][u] = w;
+//For weighted Directed Graph
+        adj[u][v] = w;
+    }
+    return 0;
+}
+
+2.Adjacency Lists
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n, m;
+    cin >> n >> m;
+    // time complexity: O(2E)
+    vector<int> adj[n+1];
+    for(int i = 0; i < m; i++)
+    {
+        int u, v;
+        cin >> u >> v;
+//For Undirected Graph
+        adj[u].push_back(v);
+        adj[v].push_back(u);
+//For Directed Graph
+        adj[u].push_back(v);
+//For Weighted Undirected Graph 
+        vector<pair<int,int>> adj[n+1];
+        adj[u].push_back({v,w});
+        adj[v].push_back({u,w});
+//For Weighted Directed Graph 
+        adj[u].push_back({v,w});
+    }
+    return 0;
+}
