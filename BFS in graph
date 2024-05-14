@@ -1,0 +1,28 @@
+Queue data structure: follows FIFO, and will always contain the starting.
+Visited array: an array initialized to 0
+In BFS, we start with a “starting” node, mark it as visited, and push it into the queue data structure.
+In every iteration, we pop out the node ‘v’ and put it in the solution vector, as we are traversing this node.
+All the unvisited adjacent nodes from ‘v’ are visited next and are pushed into the queue. The list of adjacent neighbors of the node can be accessed from the adjacency list.
+Repeat steps 2 and 3 until the queue becomes empty, and this way you can easily traverse all the nodes in the graph.
+
+vector<int> bfsOfGraph(int V, vector<int> adj[]) {
+        // Code here
+        vector<int> ans;
+        queue<int> q;
+        q.push(0);
+        unordered_map<int,int> vis;
+        vis[0]=1;
+        while(!q.empty()){
+            int top=q.front();
+            q.pop();
+            for(int i=0;i<adj[top].size();i++){
+                int child=adj[top][i];
+                if(vis[child]!=1){
+                    q.push(adj[top][i]);
+                    vis[child]=1;
+                }
+            }
+            ans.push_back(top);
+        }
+        return ans;
+    }
